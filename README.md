@@ -36,4 +36,13 @@
 
 - Output files:
   - Genome coordinates of candidate enhancers and linked promoters.
+    - for etc: ctcf_gain_case1_high_gene_CRE.xls
   - Genome coordinates of candidate CTCF binding sites.
+    - for etc: ctcf_gain_case1_high_gene.xls
+    
+**Run Inter3d with demo dataset used in manuscript**  
+```bash
+cd demo
+bash run_demo.sh
+```
+
