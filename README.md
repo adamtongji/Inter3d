@@ -6,6 +6,10 @@
 - RNA-seq,  HiC and CTCF ChIP-seq, ATAC-seq or DNase-seq required.
 - H3K4me3 and H3K27ac ChIP-seq. (optional)
 
+## Inter3d biology mechanism
+![inter3d mechanism](mech.png)
+
+
 ## Inter3d workflow
 - **Before Inter3d**
 1. Preprocessing RNA-seq

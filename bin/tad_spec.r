@@ -1,9 +1,9 @@
-
+library(stringr)
 args=commandArgs(T)
 
 tad1<-args[1]
 tad2<-args[2]
-outputfile<-args[3]
+outputdir<-args[3]
 
 tad_1_file<-read.table(tad1,sep='\t')
 tad_2_file<-read.table(tad2,sep='\t')
@@ -22,9 +22,10 @@ tad_2_spec_mat[,2]= as.numeric(as.matrix(tad_2_spec_mat[,2]))
 
 # tad_1_spec_5k <-data.frame(chr=tad_1_spec_mat[,1],start=tad_1_spec_mat[,2]-5000,end=tad_1_spec_mat[,2]+5000)
 tad_1_spec_10k <-data.frame(chr=tad_1_spec_mat[,1],start=tad_1_spec_mat[,2]-10000,end=tad_1_spec_mat[,2]+10000)
-
+tad_1_spec_10k$start[tad_1_spec_10k$start<1]<- 1
 # tad_2_spec_5k <-data.frame(chr=tad_2_spec_mat[,1],start=tad_2_spec_mat[,2]-5000,end=tad_2_spec_mat[,2]+5000)
 tad_2_spec_10k <-data.frame(chr=tad_2_spec_mat[,1],start=tad_2_spec_mat[,2]-10000,end=tad_2_spec_mat[,2]+10000)
+tad_2_spec_10k$start[tad_2_spec_10k$start<1]<- 1
 
-write.table(tad_1_spec_10k,"",sep='\t',row.names = F,col.names=F,quote=F)
-write.table(tad_2_spec_10k,"",sep='\t',row.names = F,col.names=F,quote=F)
+write.table(tad_1_spec_10k,file=paste0(outputdir,"case1_spec_tad.bed"),sep='\t',row.names = F,col.names=F,quote=F)
+write.table(tad_2_spec_10k,file=paste0(outputdir,"case2_spec_tad.bed"),sep='\t',row.names = F,col.names=F,quote=F)
